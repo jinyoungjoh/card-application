@@ -1,26 +1,24 @@
-import { css } from '@emotion/react'
-import styled from '@emotion/styled'
 import './App.css'
-
-const bold = css`
-  font-weight: bold;
-`
-
-const contianerStyles = css`
-  background-color: black;
-  ${bold}
-`
-
-const Button = styled.button`
-  width: 200px;
-  height: 100px;
-  ${bold}
-`
+import Text from '@common/Text'
+import Button from '@common/Button'
 
 function App() {
   return (
-    <div className="App" css={contianerStyles}>
+    <div className="App">
       <Button>스타일 버튼</Button>
+      <Text>???</Text>
+      <Button color="success">클릭해주세요</Button>
+      <Button color="error">클릭해주세요</Button>
+      <Button color="success" weak>
+        클릭해주세요
+      </Button>
+      <Button color="error" weak>
+        클릭해주세요
+      </Button>
+      <Button full>클릭해주세요</Button>
+      <Button full disabled>
+        클릭해주세요
+      </Button>
     </div>
   )
 }
