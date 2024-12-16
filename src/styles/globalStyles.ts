@@ -5,7 +5,7 @@ export default css`
   ${colorPalette}
   :root {
     --dimmed-zindex: 10;
-    --alert-zined: 11;
+    --alert-zindex: 11;
   }
   html,
   body,
