@@ -9,7 +9,7 @@ interface FlexProps {
 
 const Flex = styled.div<FlexProps>(({ align, justify, direction }) => ({
   display: 'flex',
-  alignContent: align,
+  alignItems: align,
   justifyContent: justify,
   flexDirection: direction,
 }))

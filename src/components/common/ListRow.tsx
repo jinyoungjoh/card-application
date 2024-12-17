@@ -8,11 +8,19 @@ interface ListRowProps {
   right?: React.ReactNode
   withArrow?: boolean
   onClick?: () => void
+  as?: 'div' | 'li'
 }
 
-function ListRow({ left, contents, right, withArrow, onClick }: ListRowProps) {
+function ListRow({
+  left,
+  contents,
+  right,
+  withArrow,
+  onClick,
+  as = 'li',
+}: ListRowProps) {
   return (
-    <Flex as="li" css={listRowContainerStyles} onClick={onClick} align="center">
+    <Flex as={as} css={listRowContainerStyles} onClick={onClick} align="center">
       <Flex css={listRowLeftStyles}>{left}</Flex>
       <Flex css={listRowContentsStyles}>{contents}</Flex>
       <Flex>{right}</Flex>
@@ -58,7 +66,6 @@ function IconArrowRight() {
       strokeWidth="2"
       viewBox="0 0 24 24"
       width="20"
-      xmlns="http://www.w3.org/2000/svg"
     >
       <polyline points="9 18 15 12 9 6" />
     </svg>
