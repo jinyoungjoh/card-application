@@ -6,8 +6,8 @@ export const colorPalette = css`
     --blue: #2196f3;
     --green: #4caf50;
     --white: #ffffff;
-    --black: #212121;
-    --grey: #9e9e9e;
+    --black: #191f28;
+    --grey: #f2f4f6;
   }
 `
 export const colors = {
