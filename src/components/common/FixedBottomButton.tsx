@@ -7,9 +7,14 @@ import { css, keyframes } from '@emotion/react'
 interface FixedBottomButtonProps {
   label: string
   onClick: () => void
+  disabled?: boolean
 }
 
-function FixedBottomButton({ label, onClick }: FixedBottomButtonProps) {
+function FixedBottomButton({
+  label,
+  onClick,
+  disabled,
+}: FixedBottomButtonProps) {
   const $portalRoot = document.getElementById('root-portal')
 
   if (!$portalRoot || $portalRoot === null) {
@@ -18,7 +23,13 @@ function FixedBottomButton({ label, onClick }: FixedBottomButtonProps) {
 
   return createPortal(
     <Container>
-      <Button size={'medium'} css={buttonStyle} full onClick={onClick}>
+      <Button
+        size={'medium'}
+        css={buttonStyle}
+        full
+        onClick={onClick}
+        disabled={disabled}
+      >
         {label}
       </Button>
     </Container>,
