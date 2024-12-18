@@ -6,6 +6,8 @@ import ScrollToTop from '@common/ScrollToTop'
 import LoginPage from '@/pages/Login'
 import SignUpPage from '@pages/SignUp'
 import Navbar from '@common/Navbar'
+import PrivateRoute from './components/auth/PrivateRoute'
+import ApplyPage from '@pages/Apply'
 
 function App() {
   return (
@@ -17,6 +19,14 @@ function App() {
         <Route path="/login" Component={LoginPage} />
         <Route path="/signup" Component={SignUpPage} />
         <Route path="/card/:id" Component={CardPage} />
+        <Route
+          path="/apply/:id"
+          element={
+            <PrivateRoute>
+              <ApplyPage />
+            </PrivateRoute>
+          }
+        />
         <Route path="/test" Component={TestPage} />
       </Routes>
     </BrowserRouter>

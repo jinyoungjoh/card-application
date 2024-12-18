@@ -31,7 +31,7 @@ function Navbar() {
       )
     }
     return null
-  }, [user, showSignButton])
+  }, [user, showSignButton, handleLogout])
 
   return (
     <Flex justify="space-between" align="center" css={navbarContainerStyles}>
