@@ -5,8 +5,7 @@ import Flex from '@common/Flex'
 import Button from '@common/Button'
 import useUser from '@/hooks/auth/useUser'
 import { useCallback } from 'react'
-import { signOut } from 'firebase/auth'
-import { auth } from '@/remote/firebase'
+import ProfileImage from '../my/ProfileImage'
 
 function Navbar() {
   const location = useLocation()
@@ -14,13 +13,13 @@ function Navbar() {
     ['/signup', '/login'].includes(location.pathname) === false
   const user = useUser()
 
-  const handleLogout = useCallback(() => {
-    signOut(auth)
-  }, [])
-
   const renderBtn = useCallback(() => {
     if (user !== null) {
-      return <Button onClick={handleLogout}>로그아웃</Button>
+      return (
+        <Link to="/my">
+          <ProfileImage size={32} />
+        </Link>
+      )
     }
 
     if (showSignButton) {
@@ -31,7 +30,7 @@ function Navbar() {
       )
     }
     return null
-  }, [user, showSignButton, handleLogout])
+  }, [user, showSignButton])
 
   return (
     <Flex justify="space-between" align="center" css={navbarContainerStyles}>

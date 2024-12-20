@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Suspense } from 'react'
 import HomePage from '@pages/Home'
 import TestPage from '@pages/Test'
 import CardPage from '@pages/Card'
@@ -9,7 +10,7 @@ import Navbar from '@common/Navbar'
 import PrivateRoute from './components/auth/PrivateRoute'
 import ApplyPage from '@pages/Apply'
 import ApplyDone from '@pages/ApplyDone'
-import { Suspense } from 'react'
+import My from '@/pages/My'
 
 function App() {
   return (
@@ -31,7 +32,22 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="/apply/done" Component={ApplyDone} />
+        <Route
+          path="/apply/done"
+          element={
+            <PrivateRoute>
+              <ApplyDone />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/my"
+          element={
+            <PrivateRoute>
+              <My />
+            </PrivateRoute>
+          }
+        />
         <Route path="/test" Component={TestPage} />
       </Routes>
     </BrowserRouter>

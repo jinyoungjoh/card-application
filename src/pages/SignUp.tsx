@@ -7,10 +7,13 @@ import { collection, doc, setDoc } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom'
 import { FirebaseError } from 'firebase/app'
 import { useAlertContext } from '@/contexts/AlertContext'
+import { useSetRecoilState } from 'recoil'
+import { userAtom } from '@/atom/user'
 
 function SignUpPage() {
   const { open } = useAlertContext()
   const navigate = useNavigate()
+  const setUser = useSetRecoilState(userAtom)
   const handleSubmit = async (form: SignUpFormValues) => {
     const { email, password, name } = form
 
@@ -33,6 +36,11 @@ function SignUpPage() {
 
       // user.uid를 id값으로 저장
       await setDoc(doc(collection(store, COLLECTIONS.USER), user.uid), newUser)
+      setUser({
+        uid: user.uid,
+        email: user.email ?? '',
+        displayName: user.displayName ?? '',
+      })
       navigate('/')
     } catch (e) {
       // firebase 에러
