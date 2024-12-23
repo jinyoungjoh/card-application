@@ -10,7 +10,19 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
 function AdBanners() {
-  const { data } = useQuery(['adBanners'], () => getAdBanners())
+  const { data, isLoading } = useQuery(['adBanners'], () => getAdBanners())
+
+  // 레이아웃 쉬프트 방지용
+  if (data == null || isLoading) {
+    return (
+      <Container>
+        <Flex direction="column" css={[bannerContainerStyles, skeletionStyle]}>
+          <Text bold />
+          <Text typography="t7"></Text>
+        </Flex>
+      </Container>
+    )
+  }
 
   return (
     <Container>
@@ -40,6 +52,10 @@ const bannerContainerStyles = css`
   padding: 16px;
   background-color: ${colors.grey};
   border-radius: 4px;
+`
+
+const skeletionStyle = css`
+  height: 45px;
 `
 
 export default AdBanners
