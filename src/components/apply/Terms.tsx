@@ -42,7 +42,7 @@ function Terms({ onNext }: { onNext: (terms: string[]) => void }) {
           checked={areAllTermsAgreed}
           onChange={handleAllAgreement}
         >
-          약간에 모두 동의
+          약관에 모두 동의
         </Agreement.Title>
         <Spacing size={8} />
         {TERM_LIST.map(({ id, title, link }) => (

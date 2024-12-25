@@ -34,7 +34,9 @@ function Navbar() {
 
   return (
     <Flex justify="space-between" align="center" css={navbarContainerStyles}>
-      <Link to="/">홈</Link>
+      <Link to="/" style={{ fontWeight: '600' }}>
+        홈
+      </Link>
       {renderBtn()}
     </Flex>
   )

@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 export const colorPalette = css`
   :root {
     --red: #f44336;
-    --blue: #2196f3;
+    --blue: #3182f6;
     --green: #4caf50;
     --white: #ffffff;
     --black: #191f28;

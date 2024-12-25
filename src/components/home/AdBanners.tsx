@@ -7,10 +7,14 @@ import styled from '@emotion/styled'
 import { useQuery } from 'react-query'
 import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper'
 import 'swiper/css'
+import 'swiper/css/pagination'
 
 function AdBanners() {
-  const { data, isLoading } = useQuery(['adBanners'], () => getAdBanners())
+  const { data, isLoading } = useQuery(['adBanners'], () => getAdBanners(), {
+    refetchOnWindowFocus: false, // 포커스 변경 시 재호출 비활성화
+  })
 
   // 레이아웃 쉬프트 방지용
   if (data == null || isLoading) {
@@ -26,8 +30,12 @@ function AdBanners() {
 
   return (
     <Container>
-      <Swiper spaceBetween={8}>
-        {data?.map((banner) => {
+      <Swiper
+        spaceBetween={8}
+        modules={[Pagination]}
+        pagination={{ clickable: true }}
+      >
+        {data?.map((banner, index) => {
           return (
             <SwiperSlide key={banner.id}>
               <Link to={banner.link}>
@@ -49,7 +57,7 @@ const Container = styled.div`
 `
 
 const bannerContainerStyles = css`
-  padding: 16px;
+  padding: 19px 20px 30px 20px;
   background-color: ${colors.grey};
   border-radius: 4px;
 `

@@ -11,6 +11,7 @@ import FixedBottomButton from '@common/FixedBottomButton'
 import { useCallback } from 'react'
 import useUser from '@/hooks/auth/useUser'
 import { useAlertContext } from '@/contexts/AlertContext'
+import { colors } from '@/styles/colorPalette'
 
 function CardPage() {
   const { id = '' } = useParams()
@@ -45,7 +46,7 @@ function CardPage() {
     promotion != null ? removeHtmlTags(promotion?.title) : tags.join(', ')
 
   return (
-    <div>
+    <div style={{ overflow: 'hidden' }}>
       <Top title={`${corpName} ${name}`} subTitle={subTitle} />
       <ul>
         {benefit.map((text, index) => {
@@ -81,7 +82,7 @@ function CardPage() {
       {promotion?.terms && (
         <motion.div
           transition={{
-            duration: 1,
+            duration: 0.8,
             ease: 'easeIn',
           }}
           initial={{
@@ -93,7 +94,9 @@ function CardPage() {
         >
           <Flex direction="column" css={termsContainerStyles}>
             <Text bold={true}>유의사항</Text>
-            <Text typography="t7">{removeHtmlTags(promotion.terms)}</Text>
+            <div css={termTextBoxStyles}>
+              <Text typography="t7">{removeHtmlTags(promotion.terms)}</Text>
+            </div>
           </Flex>
         </motion.div>
       )}
@@ -130,6 +133,12 @@ function removeHtmlTags(text: string) {
 const termsContainerStyles = css`
   margin-top: 80px;
   padding: 0 24px 80px 24px;
+`
+const termTextBoxStyles = css`
+  background-color: ${colors.grey};
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
 `
 
 export default CardPage

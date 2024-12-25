@@ -1,8 +1,10 @@
 import { css } from '@emotion/react'
 import { colorPalette } from './colorPalette'
+import { font } from './font'
 
 export default css`
   ${colorPalette}
+  ${font}
   :root {
     --dimmed-zindex: 10;
     --alert-zindex: 11;
@@ -110,7 +112,14 @@ export default css`
     display: block;
   }
   body {
-    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 540px;
+    min-height: 100vh;
+    margin: 0px auto;
+    box-shadow: #d5dde4 0px 8px 36px;
+    font-family: 'Pretendard', sans-serif;
   }
   ol,
   ul {

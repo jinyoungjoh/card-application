@@ -11,6 +11,7 @@ interface ListRowProps {
   withArrow?: boolean
   onClick?: () => void
   as?: 'div' | 'li'
+  highlight?: boolean
 }
 
 function ListRow({
@@ -20,10 +21,18 @@ function ListRow({
   withArrow,
   onClick,
   as = 'li',
+  highlight,
 }: ListRowProps) {
   return (
-    <Flex as={as} css={listRowContainerStyles} onClick={onClick} align="center">
-      <Flex css={listRowLeftStyles}>{left}</Flex>
+    <Flex
+      as={as}
+      css={
+        !highlight ? listRowContainerStyles : highLightListRowContainerStyles
+      }
+      onClick={onClick}
+      align="center"
+    >
+      {left && <Flex css={listRowLeftStyles}>{left}</Flex>}
       <Flex css={listRowContentsStyles}>{contents}</Flex>
       <Flex>{right}</Flex>
       {withArrow ? <IconArrowRight /> : null}
@@ -33,6 +42,18 @@ function ListRow({
 
 const listRowContainerStyles = css`
   padding: 8px 24px;
+`
+
+const highLightListRowContainerStyles = css`
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 12px 10px;
+  margin: 8px 24px;
+  transition: background 0.2s ease;
+
+  :hover {
+    background-color: rgba(2, 32, 71, 0.03);
+  }
 `
 
 const listRowLeftStyles = css`

@@ -24,6 +24,7 @@ function CardList() {
         return snapshot.lastVisible
       },
       suspense: true,
+      refetchOnWindowFocus: false, // 포커스 변경 시 재호출 비활성화
     },
   )
 
@@ -68,6 +69,7 @@ function CardList() {
                 onClick={() => {
                   navigate(`/card/${card.id}`)
                 }}
+                highlight
               />
             )
           })}

@@ -33,7 +33,7 @@ function ApplyPage() {
         }
         if (applied.status === APPLY_STATUS.COMPLETE) {
           open({
-            title: '이미 발급이 완료된 카드입니다.',
+            title: '이미 발급된 카드입니다.',
             onButtonClick: () => {
               window.history.back()
             },

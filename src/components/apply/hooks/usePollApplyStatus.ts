@@ -17,7 +17,6 @@ function usePollApplyStatus({
     refetchInterval: 2000,
     staleTime: 0,
     onSuccess: (status) => {
-      console.log(status)
       if (status === APPLY_STATUS.COMPLETE) {
         onSuccess()
       }
