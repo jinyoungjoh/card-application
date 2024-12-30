@@ -120,6 +120,7 @@ export default css`
     margin: 0px auto;
     box-shadow: #d5dde4 0px 8px 36px;
     font-family: 'Pretendard', sans-serif;
+    scrollbar-width: thin;
   }
   ol,
   ul {
@@ -154,5 +155,10 @@ export default css`
   a {
     color: inherit;
     text-decoration: inherit;
+  }
+  input {
+    ::placeholder {
+      color: rgba(3, 24, 50, 0.26);
+    }
   }
 `

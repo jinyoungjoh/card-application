@@ -10,14 +10,14 @@ interface AlertProps {
   title: React.ReactNode
   description?: React.ReactNode
   buttonLabel?: string
-  onButtonClick: () => void
+  onButtonClick?: () => void
 }
 
 function Alert({
   open,
   title,
   description,
-  onButtonClick,
+  onButtonClick = () => {},
   buttonLabel = '확인',
 }: AlertProps) {
   if (open === false) {

@@ -1,12 +1,14 @@
 import Divider from '@common/Divider'
 import Spacing from '@common/Spacing'
-import Text from '../common/Text'
+import Text from '@common/Text'
 import Flex from '@common/Flex'
 import CardEmpty from './CardEmpty'
 import useMyCards from './hooks/useMyCards'
 import useUser from '@/hooks/auth/useUser'
 import MyCardListItem from './MyCardListItem'
 import useDeleteMyCard from './hooks/useDeleteMyCard'
+import { AnimatePresence } from 'framer-motion'
+import Animated from '@common/Animated'
 
 function MyCardList() {
   const user = useUser()
@@ -29,19 +31,24 @@ function MyCardList() {
             padding: '0px 24px 24px 24px',
           }}
         >
-          {cards.map((card) => (
-            <MyCardListItem
-              card={card.cardDetails}
-              key={card.docId}
-              appliedAt={card.appliedAt.toDate()}
-              onDelete={() => {
-                mutate({ docId: card.docId })
-              }}
-            />
-          ))}
+          <AnimatePresence>
+            {cards.map((card) => (
+              <Animated animation={'fadeInDown'}>
+                <MyCardListItem
+                  card={card.cardDetails}
+                  appliedAt={card.appliedAt.toDate()}
+                  onDelete={() => {
+                    mutate({ docId: card.docId })
+                  }}
+                />
+              </Animated>
+            ))}
+          </AnimatePresence>
         </div>
       ) : (
-        <CardEmpty />
+        <Animated animation={'fadeInDown'}>
+          <CardEmpty />
+        </Animated>
       )}
     </Flex>
   )

@@ -36,7 +36,7 @@ export function AlertContextProvider({
   }, [])
 
   const open = useCallback(
-    ({ onButtonClick, ...options }: AlertOptions) => {
+    ({ onButtonClick = () => {}, ...options }: AlertOptions) => {
       setAlertState({
         ...options,
         onButtonClick: () => {

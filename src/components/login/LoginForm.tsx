@@ -1,7 +1,13 @@
 import Flex from '@common/Flex'
 import TextField from '@common/TextField'
 import Button from '@common/Button'
-import { ChangeEvent, useCallback, useMemo, useState } from 'react'
+import {
+  ChangeEvent,
+  useCallback,
+  useMemo,
+  useState,
+  KeyboardEvent,
+} from 'react'
 import Spacing from '@common/Spacing'
 import { css } from '@emotion/react'
 import { Link } from 'react-router-dom'
@@ -30,20 +36,24 @@ function LoginForm({
   const errors = useMemo(() => validate(form), [form])
   const isFormValidate = Object.keys(errors).length === 0
 
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === 'Enter' && isFormValidate) {
+        onSubmit(form)
+      }
+    },
+    [form, isFormValidate, onSubmit],
+  )
+
   return (
     <Flex direction="column" css={formContainerStyles}>
-      <TextField
-        label="이메일"
-        name="email"
-        placeholder=""
-        onChange={handleFormValues}
-      />
+      <TextField label="이메일" name="email" onChange={handleFormValues} />
       <Spacing />
       <TextField
         label="패스워드"
         name="password"
-        placeholder=""
         onChange={handleFormValues}
+        onKeyDown={handleKeyDown}
         type="password"
       />
       <Spacing size={32} />

@@ -11,7 +11,7 @@ function useDeleteMyCard() {
     {
       onSuccess: () => {
         open({
-          title: '발급 취소가 정상적으로 처리되었습니다.',
+          title: '카드 발급 취소가 정상적으로 처리되었습니다.',
           onButtonClick: () => {
             queryClient.invalidateQueries(['myCard'])
           },

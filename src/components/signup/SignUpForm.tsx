@@ -47,6 +47,7 @@ function SignUpForm({
         hasError={Boolean(dirty.email) && Boolean(errors.email)}
         helpMessage={Boolean(dirty.email) && errors.email}
         onBlur={handleBlur}
+        autoFocus={true}
       />
       <Spacing />
       <TextField

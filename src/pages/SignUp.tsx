@@ -49,7 +49,6 @@ function SignUpPage() {
           open({
             title: '이미 가입된 계정입니다.',
             description: '계정 정보를 다시 확인해주세요.',
-            onButtonClick: () => {},
           })
           return
         }
@@ -57,7 +56,6 @@ function SignUpPage() {
       // 서버 에러
       open({
         title: '잠시 후 다시 시도해주세요.',
-        onButtonClick: () => {},
       })
     }
   }
