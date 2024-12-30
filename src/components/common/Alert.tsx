@@ -39,7 +39,7 @@ function Alert({
         <Flex justify="flex-end">
           <Button
             onClick={onButtonClick}
-            weak={true}
+            outline={true}
             style={{ marginTop: 12, border: 'none' }}
           >
             {buttonLabel}

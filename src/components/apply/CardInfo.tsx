@@ -35,7 +35,7 @@ function CardInfo({
       <Button.Group title="해외결제">
         <Button
           name="isMaster"
-          weak={isMaster === false}
+          outline={isMaster === false}
           size="medium"
           data-value={true}
           onClick={handleBtnClick}
@@ -44,7 +44,7 @@ function CardInfo({
         </Button>
         <Button
           name="isMaster"
-          weak={isMaster === true}
+          outline={isMaster === true}
           size="medium"
           data-value={false}
           onClick={handleBtnClick}
@@ -57,7 +57,7 @@ function CardInfo({
       <Button.Group title="후불교통기능">
         <Button
           name="isRf"
-          weak={isRf === true}
+          outline={isRf === true}
           size="medium"
           data-value={false}
           onClick={handleBtnClick}
@@ -66,7 +66,7 @@ function CardInfo({
         </Button>
         <Button
           name="isRf"
-          weak={isRf === false}
+          outline={isRf === false}
           size="medium"
           data-value={true}
           onClick={handleBtnClick}
@@ -79,7 +79,7 @@ function CardInfo({
       <Button.Group title="후불하이패스카드">
         <Button
           name="isHipass"
-          weak={isHipass === true}
+          outline={isHipass === true}
           size="medium"
           data-value={false}
           onClick={handleBtnClick}
@@ -88,7 +88,7 @@ function CardInfo({
         </Button>
         <Button
           name="isHipass"
-          weak={isHipass === false}
+          outline={isHipass === false}
           size="medium"
           data-value={true}
           onClick={handleBtnClick}

@@ -1,6 +1,7 @@
 import {
   ButtonColor,
   buttonColorMap,
+  buttonOutlineMap,
   ButtonSize,
   buttonSizeMap,
   buttonWeakMap,
@@ -14,6 +15,7 @@ import Spacing from './Spacing'
 interface ButtonProps {
   color?: ButtonColor
   size?: ButtonSize
+  outline?: boolean
   weak?: boolean
   full?: boolean
   disabled?: boolean
@@ -25,8 +27,12 @@ const BaseButton = styled.button<ButtonProps>(
     fontWeight: 'bold',
     borderRadius: '6px',
   },
-  ({ color = 'primary', weak }) =>
-    weak ? buttonWeakMap[color] : buttonColorMap[color],
+  ({ color = 'primary', weak, outline }) =>
+    outline
+      ? buttonOutlineMap[color]
+      : weak
+        ? buttonWeakMap[color]
+        : buttonColorMap[color],
   ({ size = 'small' }) => buttonSizeMap[size],
   ({ full }) =>
     full

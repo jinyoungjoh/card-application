@@ -6,6 +6,10 @@ export const buttonColorMap = {
     background-color: ${colors.blue};
     color: ${colors.white};
   `,
+  secondary: css`
+    background-color: ${colors.darkGrey};
+    color: ${colors.grey};
+  `,
   success: css`
     background-color: ${colors.green};
     color: ${colors.white};
@@ -18,9 +22,33 @@ export const buttonColorMap = {
 
 export const buttonWeakMap = {
   primary: css`
+    background-color: ${colors.lightBlue};
+    color: ${colors.blue};
+  `,
+  secondary: css`
+    background-color: ${colors.grey};
+    color: ${colors.darkGrey};
+  `,
+  success: css`
+    background-color: ${colors.lightGreen};
+    color: ${colors.green};
+  `,
+  error: css`
+    background-color: ${colors.lightRed};
+    color: ${colors.red};
+  `,
+}
+
+export const buttonOutlineMap = {
+  primary: css`
     background-color: ${colors.white};
     color: ${colors.blue};
     border: 1px solid ${colors.blue};
+  `,
+  secondary: css`
+    background-color: ${colors.white};
+    color: ${colors.darkGrey};
+    border: 1px solid ${colors.grey};
   `,
   success: css`
     background-color: ${colors.white};
