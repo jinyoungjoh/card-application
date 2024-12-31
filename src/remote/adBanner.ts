@@ -5,7 +5,7 @@ import { AdBanner } from '@/models/card'
 
 export async function getAdBanners() {
   const adBannerSnapshot = await getDocs(
-    collection(store, COLLECTIONS.ADDBANNER),
+    collection(store, COLLECTIONS.ADBANNER),
   )
 
   return adBannerSnapshot.docs.map((doc) => ({

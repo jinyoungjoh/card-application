@@ -13,7 +13,7 @@ function AdBannerListAddButton() {
     // mock data로부터 adBanners를 순회하면서 Firestore에 데이터 추가
     adBanners.forEach((banner) => {
       // 새로운 카드 문서 참조 생성
-      const docRef = doc(collection(store, COLLECTIONS.ADDBANNER))
+      const docRef = doc(collection(store, COLLECTIONS.ADBANNER))
       // 배치에 카드 데이터 추가
       batch.set(docRef, banner)
     })

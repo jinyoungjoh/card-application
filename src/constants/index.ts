@@ -1,6 +1,6 @@
 export const COLLECTIONS = {
   CARD: 'CARD',
-  ADDBANNER: 'ADDBANNER',
+  ADBANNER: 'ADBANNER',
   USER: 'USER',
   CARD_APPLY: 'CARD_APPLY',
 } as const
