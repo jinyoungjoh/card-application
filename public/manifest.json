@@ -1,7 +1,7 @@
 {
   "short_name": "Card App",
   "name": "Card Application",
-  "description": "A simple web app for applying and managing cards",
+  "description": "A simple web app for applying and managing cards.",
   "icons": [
     {
       "src": "favicon.ico",
