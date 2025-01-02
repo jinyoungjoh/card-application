@@ -5,8 +5,8 @@ export const font = css`
   @font-face {
     font-family: 'Pretendard';
     src:
-      url('/assets/fonts/Pretendard-Regular-subset.woff2') format('woff2'),
-      url('/assets/fonts/Pretendard-Regular-subset.woff') format('woff');
+      url('/assets/fonts/Pretendard-Regular-subset.woff2') format('font-woff2'),
+      url('/assets/fonts/Pretendard-Regular-subset.woff') format('font-woff');
     font-weight: normal; /* 400 */
     font-style: normal;
   }
@@ -15,8 +15,8 @@ export const font = css`
   @font-face {
     font-family: 'Pretendard';
     src:
-      url('/assets/fonts/Pretendard-Medium-subset.woff2') format('woff2'),
-      url('/assets/fonts/Pretendard-Medium-subset.woff') format('woff');
+      url('/assets/fonts/Pretendard-Medium-subset.woff2') format('font-woff2'),
+      url('/assets/fonts/Pretendard-Medium-subset.woff') format('font-woff');
     font-weight: 500; /* Medium */
     font-style: normal;
   }
@@ -25,8 +25,8 @@ export const font = css`
   @font-face {
     font-family: 'Pretendard';
     src:
-      url('/assets/fonts/Pretendard-SemiBold-subset.woff2') format('woff2'),
-      url('/assets/fonts/Pretendard-SemiBold-subset.woff') format('woff');
+      url('/assets/fonts/Pretendard-SemiBold-subset.woff2') format('font-woff2'),
+      url('/assets/fonts/Pretendard-SemiBold-subset.woff') format('font-woff');
     font-weight: 600; /* SemiBold */
     font-style: normal;
   }
@@ -35,8 +35,8 @@ export const font = css`
   @font-face {
     font-family: 'Pretendard';
     src:
-      url('/assets/fonts/Pretendard-Bold-subset.woff2') format('woff2'),
-      url('/assets/fonts/Pretendard-Bold-subset.woff') format('woff');
+      url('/assets/fonts/Pretendard-Bold-subset.woff2') format(font-woff2),
+      url('/assets/fonts/Pretendard-Bold-subset.woff') format('font-woff');
     font-weight: bold; /* 700 */
     font-style: normal;
   }
