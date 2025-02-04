@@ -69,7 +69,9 @@ function ApplyPage({
 
   return (
     <div>
-      <ProgressBar progress={(applyValues.step as number) / TOTAL_STEPS} />
+      <ProgressBar
+        progress={((applyValues.step as number) + 1) / TOTAL_STEPS}
+      />
       {applyValues.step === 0 && <Terms onNext={handleTermsChange} />}
       {applyValues.step === 1 && <BasicInfo onNext={handleBasicInfoChange} />}
       {applyValues.step === 2 && <CardInfo onNext={handleCardInfoChange} />}

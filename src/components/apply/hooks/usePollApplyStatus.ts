@@ -14,8 +14,8 @@ function usePollApplyStatus({
 }: usePollApplyStatusProps) {
   return useQuery(['applyStatus'], () => fetchMockApplyStatus(), {
     enabled,
-    refetchInterval: 2000,
-    staleTime: 0,
+    refetchInterval: 5000,
+    staleTime: 5000,
     onSuccess: (status) => {
       if (status === APPLY_STATUS.COMPLETE) {
         onSuccess()
@@ -27,21 +27,21 @@ function usePollApplyStatus({
   })
 }
 
-function fetchMockApplyStatus() {
+function createMockApplyStatusFetcher() {
   const values = [
     APPLY_STATUS.READY,
     APPLY_STATUS.PROGRESS,
     APPLY_STATUS.COMPLETE,
-    APPLY_STATUS.REJECT,
   ]
+  let index = 0
 
-  const status = values[Math.floor(Math.random() * values.length)]
-
-  if (status === APPLY_STATUS.REJECT) {
-    throw new Error('카드 발급에 실패했습니다')
+  return function fetchMockApplyStatus() {
+    const status = values[index]
+    index = Math.min(index + 1, values.length - 1)
+    return status
   }
-
-  return status
 }
+
+const fetchMockApplyStatus = createMockApplyStatusFetcher()
 
 export default usePollApplyStatus

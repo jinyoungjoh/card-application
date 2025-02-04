@@ -33,7 +33,7 @@ function MyCardList() {
         >
           <AnimatePresence>
             {cards.map((card) => (
-              <Animated animation={'fadeInDown'}>
+              <Animated animation={'fadeInDown'} key={card.cardId}>
                 <MyCardListItem
                   card={card.cardDetails}
                   appliedAt={card.appliedAt.toDate()}

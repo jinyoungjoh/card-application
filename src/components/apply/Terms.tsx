@@ -44,7 +44,7 @@ function Terms({ onNext }: { onNext: (terms: string[]) => void }) {
         >
           약관에 모두 동의
         </Agreement.Title>
-        <Spacing size={8} />
+        <Spacing />
         {TERM_LIST.map(({ id, title, link }) => (
           <Agreement.Description
             key={id}

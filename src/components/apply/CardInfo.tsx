@@ -34,8 +34,9 @@ function CardInfo({
     <Container>
       <Button.Group title="해외결제">
         <Button
+          style={{ padding: '16px 0px' }}
           name="isMaster"
-          outline={isMaster === false}
+          weak={isMaster === false}
           size="medium"
           data-value={true}
           onClick={handleBtnClick}
@@ -43,8 +44,9 @@ function CardInfo({
           Master
         </Button>
         <Button
+          style={{ padding: '16px 0px' }}
           name="isMaster"
-          outline={isMaster === true}
+          weak={isMaster === true}
           size="medium"
           data-value={false}
           onClick={handleBtnClick}
@@ -52,12 +54,13 @@ function CardInfo({
           국내전용
         </Button>
       </Button.Group>
-      <Spacing size={12} />
+      <Spacing size={26} />
 
       <Button.Group title="후불교통기능">
         <Button
+          style={{ padding: '16px 0px' }}
           name="isRf"
-          outline={isRf === true}
+          weak={isRf === true}
           size="medium"
           data-value={false}
           onClick={handleBtnClick}
@@ -65,8 +68,9 @@ function CardInfo({
           신청안함
         </Button>
         <Button
+          style={{ padding: '16px 0px' }}
           name="isRf"
-          outline={isRf === false}
+          weak={isRf === false}
           size="medium"
           data-value={true}
           onClick={handleBtnClick}
@@ -74,12 +78,13 @@ function CardInfo({
           신청
         </Button>
       </Button.Group>
-      <Spacing size={12} />
+      <Spacing size={26} />
 
       <Button.Group title="후불하이패스카드">
         <Button
+          style={{ padding: '16px 0px' }}
           name="isHipass"
-          outline={isHipass === true}
+          weak={isHipass === true}
           size="medium"
           data-value={false}
           onClick={handleBtnClick}
@@ -87,8 +92,9 @@ function CardInfo({
           신청안함
         </Button>
         <Button
+          style={{ padding: '16px 0px' }}
           name="isHipass"
-          outline={isHipass === false}
+          weak={isHipass === false}
           size="medium"
           data-value={true}
           onClick={handleBtnClick}

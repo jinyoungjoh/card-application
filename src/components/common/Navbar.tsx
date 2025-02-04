@@ -34,8 +34,22 @@ function Navbar() {
 
   return (
     <Flex justify="space-between" align="center" css={navbarContainerStyles}>
-      <Link to="/" style={{ fontWeight: '600' }}>
-        홈
+      <Link
+        to="/"
+        style={{
+          fontWeight: '600',
+        }}
+      >
+        <img
+          src="/logo_192.png"
+          width={20}
+          height={20}
+          style={{
+            alignSelf: 'center',
+            display: 'flex',
+          }}
+          alt="logo"
+        />
       </Link>
       {renderBtn()}
     </Flex>

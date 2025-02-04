@@ -5,6 +5,8 @@ import Text from './Text'
 import CheckFilled from '@assets/icons/check-filled.png'
 import Check from '@assets/icons/check.png'
 import Spacing from './Spacing'
+import { motion } from 'framer-motion'
+import { colors } from '@/styles/colorPalette'
 
 function Agreement({ children }: { children: React.ReactNode }) {
   return (
@@ -44,22 +46,34 @@ function AgreementDescription({
   onChange: (e: MouseEvent<HTMLElement>, checked: boolean) => void
 }) {
   return (
-    <Flex as="li" justify={'space-between'}>
-      <Flex
-        onClick={(e) => {
-          onChange(e, !checked)
-        }}
-      >
+    <motion.li
+      style={{
+        padding: '10px 8px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        backgroundColor: '#FFF',
+        borderRadius: '10px',
+      }}
+      whileHover={{ backgroundColor: colors.grey }}
+      onClick={(e) => {
+        onChange(e, !checked)
+      }}
+    >
+      <Flex>
         <IconCheck checked={checked} />
         <Spacing size={8} direction={'horizontal'} />
-        <Text typography="t6">{children}</Text>
+        <Text typography="t6" fontWeight={'400'}>
+          {children}
+        </Text>
       </Flex>
       {link != null ? (
         <a href={link} target="_blank" rel="noreferrer">
-          <Text typography="t6">링크</Text>
+          <Text typography="t6" color={'darkGrey'}>
+            {'>'}
+          </Text>
         </a>
       ) : null}
-    </Flex>
+    </motion.li>
   )
 }
 

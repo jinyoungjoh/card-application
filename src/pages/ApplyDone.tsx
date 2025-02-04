@@ -3,6 +3,8 @@ import Flex from '@common/Flex'
 import { parse } from 'qs'
 import FixedBottomButton from '@common/FixedBottomButton'
 import Spacing from '@common/Spacing'
+import Success from '@assets/images/success.png'
+import Warning from '@assets/images/warning.png'
 
 function ApplyDone() {
   const { success } = parse(window.location.search, {
@@ -12,15 +14,7 @@ function ApplyDone() {
   return (
     <Flex align="center" justify="center" style={{ height: '80vh' }}>
       <Flex direction="column" align="center">
-        <img
-          width={120}
-          src={
-            success
-              ? 'https://media-public.canva.com/3459I/MAFGNk3459I/1/s2.png'
-              : 'https://i.ibb.co/zFNJszz/Asyn-9.png'
-          }
-          alt="loading-gif"
-        />
+        <img width={160} src={success ? Success : Warning} alt="apply status" />
         <Spacing />
         <Text bold>
           {success === 'true'

@@ -61,7 +61,12 @@ function ProfileImage({
         style={{ border: `1px solid ${colors.grey}` }}
       />
       {mode === 'upload' && (
-        <input type="file" accept="image/*" onChange={handleUploadImage} />
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleUploadImage}
+          alt="upload image"
+        />
       )}
     </Container>
   )
