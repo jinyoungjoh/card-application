@@ -12,18 +12,20 @@ import { store } from './firebase'
 import { COLLECTIONS } from '@constants'
 import { Card } from '@models/card'
 
-export async function getCards(pageParam?: QuerySnapshot<Card>) {
+export async function getCards(
+  pageParam?: QuerySnapshot<Card>,
+  limitCount: number = 10,
+) {
   const cardQuery =
     pageParam == null
-      ? query(collection(store, COLLECTIONS.CARD), limit(10))
+      ? query(collection(store, COLLECTIONS.CARD), limit(limitCount))
       : query(
           collection(store, COLLECTIONS.CARD),
           startAfter(pageParam),
-          limit(10),
+          limit(limitCount),
         )
 
   const cardSnapshot = await getDocs(cardQuery)
-
   const lastVisible = cardSnapshot.docs[cardSnapshot.docs.length - 1]
 
   const items = cardSnapshot.docs.map((doc) => ({

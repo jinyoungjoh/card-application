@@ -2,22 +2,26 @@ import { getCards } from '@/remote/card'
 import ListRow from '@common/ListRow'
 import { css } from '@emotion/react'
 import flatten from 'lodash.flatten'
-import { useCallback } from 'react'
+import { useCallback, useRef } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useInfiniteQuery } from 'react-query'
 import Badge from '../common/Badge'
 import { useNavigate } from 'react-router-dom'
+import { useVisibleItemCount } from '@hooks/shared/useVisibleItemCount'
 
 function CardList() {
+  const listRef = useRef<HTMLDivElement>(null)
+  const itemCount = useVisibleItemCount(68, 3, listRef)
+
   const {
     data,
     hasNextPage = false,
     fetchNextPage,
     isFetching,
   } = useInfiniteQuery(
-    ['cards'],
+    ['cards', itemCount],
     ({ pageParam }) => {
-      return getCards(pageParam)
+      return getCards(pageParam, itemCount)
     },
     {
       getNextPageParam: (snapshot) => {
@@ -45,7 +49,7 @@ function CardList() {
   const cards = flatten(data?.pages.map(({ items }) => items))
 
   return (
-    <div css={Wrapper}>
+    <div ref={listRef} css={Wrapper}>
       <InfiniteScroll
         dataLength={cards.length}
         hasMore={hasNextPage}
