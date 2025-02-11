@@ -12,7 +12,11 @@ function ApplyDone() {
   }) as { success: string }
 
   return (
-    <Flex align="center" justify="center" style={{ height: '80vh' }}>
+    <Flex
+      style={{ position: 'fixed', top: 0, right: 0, left: 0, bottom: 0 }}
+      justify="center"
+      align="center"
+    >
       <Flex direction="column" align="center">
         <img width={160} src={success ? Success : Warning} alt="apply status" />
         <Spacing />
@@ -25,7 +29,6 @@ function ApplyDone() {
       <FixedBottomButton
         label="확인"
         onClick={() => {
-          // 앞에서 applyDone으로 넘어올때 replace를 했기 때문에 약관동의 페이지가 아닌 카드 상세 페이지로 이동함
           window.history.back()
         }}
       />

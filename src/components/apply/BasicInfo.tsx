@@ -8,6 +8,7 @@ import Select from '@common/Select'
 import styled from '@emotion/styled'
 import { ChangeEvent, useCallback, useState } from 'react'
 import FixedBottomButton from '../common/FixedBottomButton'
+import Spacing from '@common/Spacing'
 
 export type BasicInfoValues = Pick<
   ApplyValues,
@@ -44,6 +45,7 @@ function BasicInfo({
         value={infoValues.salary}
         onChange={handleInfoChange}
       />
+      <Spacing size={8} />
       <Select
         name="creditScore"
         label="신용점수"
@@ -52,6 +54,7 @@ function BasicInfo({
         value={infoValues.creditScore}
         onChange={handleInfoChange}
       />
+      <Spacing size={8} />
       <Select
         name="payDate"
         label="결제일"

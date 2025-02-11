@@ -36,6 +36,7 @@ const containerStyle = css`
   padding: 24px 0px;
   border-radius: 10px;
   row-gap: 12px;
+  margin-bottom: 24px;
 `
 
 export default CardEmpty
