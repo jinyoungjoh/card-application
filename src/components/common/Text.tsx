@@ -14,7 +14,7 @@ interface TextProps {
 
 const Text = styled.span<TextProps>(
   ({ color = 'black', display, textAlign, fontWeight, bold }) => ({
-    color: colors[color],
+    color: !bold ? colors['darkGrey'] : colors[color],
     display,
     textAlign,
     fontWeight: bold ? 'bold' : fontWeight,

@@ -34,7 +34,6 @@ function CardInfo({
     <Container>
       <Button.Group title="해외결제">
         <Button
-          style={{ padding: '16px 0px' }}
           name="isMaster"
           weak={isMaster === false}
           size="medium"
@@ -44,7 +43,6 @@ function CardInfo({
           Master
         </Button>
         <Button
-          style={{ padding: '16px 0px' }}
           name="isMaster"
           weak={isMaster === true}
           size="medium"
@@ -58,7 +56,6 @@ function CardInfo({
 
       <Button.Group title="후불교통기능">
         <Button
-          style={{ padding: '16px 0px' }}
           name="isRf"
           weak={isRf === true}
           size="medium"
@@ -68,7 +65,6 @@ function CardInfo({
           신청안함
         </Button>
         <Button
-          style={{ padding: '16px 0px' }}
           name="isRf"
           weak={isRf === false}
           size="medium"
@@ -82,7 +78,6 @@ function CardInfo({
 
       <Button.Group title="후불하이패스카드">
         <Button
-          style={{ padding: '16px 0px' }}
           name="isHipass"
           weak={isHipass === true}
           size="medium"
@@ -92,7 +87,6 @@ function CardInfo({
           신청안함
         </Button>
         <Button
-          style={{ padding: '16px 0px' }}
           name="isHipass"
           weak={isHipass === false}
           size="medium"

@@ -16,7 +16,7 @@ function CardEmpty() {
       justify="center"
       direction={'column'}
     >
-      <motion.img width={140} src={cardImage} alt="empty-card" />
+      <motion.img width={140} height={140} src={cardImage} alt="empty-card" />
       <Spacing size={10} />
       <Text color={'darkGrey'} typography="t7" style={{ fontWeight: 600 }}>
         아직 발급된 카드가 없어요😢

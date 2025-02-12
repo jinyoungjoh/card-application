@@ -14,8 +14,7 @@ function usePollApplyStatus({
 }: usePollApplyStatusProps) {
   return useQuery(['applyStatus'], () => fetchMockApplyStatus(), {
     enabled,
-    refetchInterval: 5000,
-    staleTime: 5000,
+    refetchInterval: 3000,
     onSuccess: (status) => {
       if (status === APPLY_STATUS.COMPLETE) {
         onSuccess()

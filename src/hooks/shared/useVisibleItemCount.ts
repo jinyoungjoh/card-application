@@ -23,18 +23,15 @@ export function useVisibleItemCount(
       if (listRef.current) {
         setListOffsetTop(listRef.current.getBoundingClientRect().top)
       }
-      console.log('[useVisibleItemCount] 뷰포트 변경:', window.innerHeight)
     }
 
     window.addEventListener('resize', handleResize)
     if (listRef.current) {
       setListOffsetTop(listRef.current.getBoundingClientRect().top)
-      console.log('[useVisibleItemCount] 초기 뷰포트 높이:', window.innerHeight)
     }
 
     return () => {
       window.removeEventListener('resize', handleResize)
-      console.log('[useVisibleItemCount] 리스너 제거')
     }
   }, [listRef])
 

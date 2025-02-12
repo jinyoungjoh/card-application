@@ -9,7 +9,6 @@ export const TERM_LIST = [
   {
     id: '02',
     title: '(필수) 개인정보 요약동의서',
-    link: 'https://www.google.com',
   },
 ] as Term[]
 
