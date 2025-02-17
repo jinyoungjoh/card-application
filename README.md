@@ -1,46 +1,44 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![preview](https://i.imgur.com/iVuhuNF.png "a preview image")
 
-## Available Scripts
+# Card Application
+**Card Application**은 사용자가 가상의 카드를 발급, 조회, 삭제할 수 있는 웹 애플리케이션입니다.(1차: 2024.12.16~2024.12.31) 
+> ⚠️ 가상의 서비스로, 실제 카드 정보나 금융 데이터를 다루지 않습니다.
 
-In the project directory, you can run:
+<br>
 
-### `yarn start`
+## 🚀 Live Demo
+Link: [Card Application - Live](https://card-application-seven.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `yarn test`
+### Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React 18**: 최신 React 기능을 사용하여 컴포넌트 기반의 구조로 개발
+- **TypeScript**: 정적 타입을 통한 안정적인 코드 작성
+- **Recoil**: 상태 관리를 간결하고 효율적으로 관리
+- **React Query**: 데이터 요청과 캐싱을 효율적으로 관리
+- **Emotion**: CSS-in-JS로 컴포넌트 스타일링
+- **Framer Motion**: 자연스럽고 매끄러운 애니메이션 구현
+- **React Router**: 페이지 간 라우팅 관리
+- **Swiper**: 슬라이드 기능 구현
+- **React Infinite Scroll Component**: 무한 스크롤 기능 제공
 
-### `yarn build`
+### Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Firebase**: 실시간 데이터베이스, 인증 관리
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tools
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **ESLint** & **Prettier**: 코드 포맷팅과 린팅
+- **CRACO**: CRA 설정 커스터마이징
+- **Webpack Bundle Analyzer**: 번들 사이즈 분석
+  
+<br>
 
-### `yarn eject`
+## 📝 라이선스
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+MIT License.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
